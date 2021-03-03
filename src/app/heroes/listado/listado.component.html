@@ -1,0 +1,32 @@
+<p>listado heroes</p>
+<div *ngIf="heroeTemp; else noBorrado">
+    <!-- tambine se puede hacer *ngIf="heroeTemp.length > 0 ? true : false; -->
+    <!-- tambine se puede hacer *ngIf = "heroeTemp || ""  
+    en este caso una cadena vacia tiene mas valor que undefined-->
+    <h3>Heroe borrado: <small>{{heroeTemp}}</small></h3>
+</div>
+
+<!-- ng-template es un componente propio de angular. -->
+<!-- Las Rerencias locales se identifican por el #(gato) -->
+<ng-template #noBorrado>
+    <h3>No borrado nada.</h3>
+</ng-template>
+
+<br>
+<button (click) = "borrarHeroe();">Eliminar un elemento.</button>
+<hr>
+
+<ul>
+    <!-- Forma 1: Desventaja es que es mucha
+        carpinteria -->
+    <!-- <li>{{heroes[0]}}</li>
+    <li>{{heroes[0]}}</li> -->
+
+    <!-- Forma 2. Utilzando ngFor -->
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i + 1}} {{heroe}}
+    
+    </li>
+</ul>
+
+
