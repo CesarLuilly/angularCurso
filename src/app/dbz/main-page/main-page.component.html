@@ -1,0 +1,33 @@
+<h1>Dragon Ball Z</h1>
+<hr>    
+<div class="row">
+    <div class="col">
+        <app-personajes [personajes] = "personajes">
+
+
+        </app-personajes>
+    </div>
+    <div class="col">
+
+        <!-- El evento que emite el hijo(app-agregar) lo recibe el 
+            padre(main-page) y el padre lo interpreta.
+        En este caso, el evento lo recibe el metodo, agregarNuevoPersonaje
+            y como ya sabemos que $event trae consigo mismo un
+            dato IPersonaje, es por eso que el metodo lo acepta -->
+        <app-agregar 
+            [nuevo] = nuevo
+            (onNuevoPersonaje) = "agregarNuevoPersonaje( $event )"
+            > 
+            
+        </app-agregar>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

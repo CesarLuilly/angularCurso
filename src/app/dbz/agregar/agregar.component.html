@@ -1,0 +1,26 @@
+<h3>Agregar <small>{{nuevo.nombre}} : {{nuevo.poder}}</small></h3>
+        <hr>
+        <!-- Con lo siguiente estoy diciendo que quiero el 
+                evento que esta disparando este formulario.  -->
+        <!-- <form (submit) = "agregar($event)">
+            <input placeholder="Nombre" type="text"> 
+            <input placeholder="Poder" type="number">
+
+            <button type="submit">Agregar</button>
+        </form> -->
+        <!-- PARA RESOLVER ESTE CASO. Utilizamos lo formularios de Angular. -->
+        <form (ngSubmit) = "agregar()">
+
+            <!-- Estoy queriendo decir que value lo quiero enlazar con alguna 
+                propiedad de mi clase. -->
+            <!-- <input 
+                placeholder="Nombre" type="text" [value]="nuevo.nombre"
+                (input) = "cambiarNombre($event)"
+            > -->
+            <!-- OTRA FORMA DE HACERLO. -->
+            <input 
+                placeholder="Nombre" type="text" name="nombre" [(ngModel)]="nuevo.nombre">
+            <input 
+                placeholder="Poder" type="number" name="poder" [(ngModel)] = "nuevo.poder">
+            <button type="submit">Agregar</button>
+        </form>
