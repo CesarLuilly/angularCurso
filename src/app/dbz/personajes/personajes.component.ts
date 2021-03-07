@@ -1,5 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { IPersonaje } from '../Interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'app-personajes',
@@ -15,7 +16,16 @@ export class PersonajesComponent {
   @Input() personajes : IPersonaje[] = [];
 
 
-
-
-
+  constructor(
+    //                //A esto se le conoce como una inyecion de 
+    //                //  dependencia.
+    //                //Como ya se inyecto en el main-page
+    //                //  estariamos esperando que se creen 2
+    //                //  instancias, pero no se hace eso, 
+    //                //  ya que angular sabe que ya fue instanciado el
+    //                //  mismo servicio.
+      private dbzService : DbzService
+    ) {
+  
+    }
 }

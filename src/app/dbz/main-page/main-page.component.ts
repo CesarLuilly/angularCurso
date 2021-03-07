@@ -1,11 +1,26 @@
 import { Component} from '@angular/core';
 import { IPersonaje } from '../Interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html'
 })
 export class MainPageComponent{
+
+  constructor(
+    //                //A esto se le conoce como una inyecion de 
+    //                //  dependencia, y esto es super fuerte, 
+    //                //Aqui nosotros estamos inyectando el 
+    //                //  el servicio en el contructor del main-page
+    //                //  y con esto lo que estamos haciendo es inicializar
+    //                //  el servicio.
+      private dbzService : DbzService
+    ) {
+  
+    }
+
+
 
   public personajes : IPersonaje[] = [
     {
@@ -41,6 +56,5 @@ export class MainPageComponent{
     console.log(event);
     console.log(event.target.value);
   }
-
 
 }
