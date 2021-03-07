@@ -2,7 +2,7 @@
 <hr>    
 <div class="row">
     <div class="col">
-        <app-personajes [personajes] = "personajes">
+        <app-personajes>
 
 
         </app-personajes>
@@ -15,9 +15,7 @@
             y como ya sabemos que $event trae consigo mismo un
             dato IPersonaje, es por eso que el metodo lo acepta -->
         <app-agregar 
-            [nuevo] = nuevo
-            (onNuevoPersonaje) = "agregarNuevoPersonaje( $event )"
-            > 
+            [nuevo] = nuevo> 
             
         </app-agregar>
     </div>
